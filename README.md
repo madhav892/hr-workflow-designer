@@ -4,21 +4,21 @@ A fully functional HR Workflow Designer web application for creating, configurin
 
 ![HR Workflow Designer](https://img.shields.io/badge/React-18.x-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue) ![React Flow](https://img.shields.io/badge/React%20Flow-12.x-green)
 
-## 🚀 Project Overview
+## Project Overview
 
 This application allows HR administrators to visually design workflows using a drag-and-drop interface powered by React Flow. Users can create complex HR processes by connecting different node types and test their workflows through a built-in simulation feature.
 
 ### Key Features
 
-- ✅ **Visual Workflow Canvas** - Drag-and-drop interface with pan, zoom, and minimap
-- ✅ **5 Custom Node Types** - Start, Task, Approval, Automated, and End nodes
-- ✅ **Dynamic Configuration Forms** - Type-specific forms with validation
-- ✅ **Real-time Validation** - Connection validation and workflow structure checks
-- ✅ **Mock API Integration** - Simulated backend for automation actions
-- ✅ **Workflow Simulation** - Test workflows with step-by-step execution logs
-- ✅ **Modern UI** - Tailwind CSS styling with color-coded nodes
+- **Visual Workflow Canvas** - Drag-and-drop interface with pan, zoom, and minimap
+- **5 Custom Node Types** - Start, Task, Approval, Automated, and End nodes
+- **Dynamic Configuration Forms** - Type-specific forms with validation
+- **Real-time Validation** - Connection validation and workflow structure checks
+- **Mock API Integration** - Simulated backend for automation actions
+- **Workflow Simulation** - Test workflows with step-by-step execution logs
+- **Modern UI** - Tailwind CSS styling with color-coded nodes
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 | Category | Technology |
 |----------|------------|
@@ -31,7 +31,7 @@ This application allows HR administrators to visually design workflows using a d
 | Styling | Tailwind CSS |
 | Icons | Lucide React |
 
-## 📦 Installation
+## Installation
 
 ### Prerequisites
 
@@ -66,7 +66,7 @@ npm run build
 npm run preview  # Preview production build
 ```
 
-## 🎯 Usage Guide
+## Usage Guide
 
 ### Creating a Workflow
 
@@ -79,11 +79,11 @@ npm run preview  # Preview production build
 
 | Node | Color | Description |
 |------|-------|-------------|
-| **Start** | 🟢 Green | Entry point - only one allowed, no incoming connections |
-| **Task** | 🔵 Blue | Human task with assignee and due date |
-| **Approval** | 🟠 Orange | Requires approval from specified role |
-| **Automated** | 🟣 Purple | System action with dynamic parameters |
-| **End** | 🔴 Red | Workflow completion - no outgoing connections |
+| **Start** | Green | Entry point - only one allowed, no incoming connections |
+| **Task** | Blue | Human task with assignee and due date |
+| **Approval** | Orange | Requires approval from specified role |
+| **Automated** | Purple | System action with dynamic parameters |
+| **End** | Red | Workflow completion - no outgoing connections |
 
 ### Connection Rules
 
@@ -92,7 +92,7 @@ npm run preview  # Preview production build
 - No self-connections or duplicate connections
 - All nodes must be connected for simulation to pass
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/
@@ -127,7 +127,7 @@ src/
 └── main.tsx              # Entry point
 ```
 
-## 🏗️ Architecture Decisions
+## Architecture Decisions
 
 ### State Management: Zustand
 Chosen for its simplicity and minimal boilerplate. The store manages:
@@ -150,7 +150,7 @@ Local mock functions that return Promises with simulated delays:
 - Store synchronization via useEffect hooks
 - Connection validation with isValidConnection callback
 
-## ✅ Implementation Details
+## Implementation Details
 
 ### Workflow Validation
 The validation service checks:
@@ -171,13 +171,13 @@ Uses DFS-based algorithm to detect cycles in the workflow graph (shown as warnin
 ## 🧪 Testing Approach
 
 ### Manual Tests Performed
-- ✅ Drag and drop all 5 node types
-- ✅ Connect nodes with edges
-- ✅ Delete nodes and edges
-- ✅ Form validation for all node types
-- ✅ Dynamic parameter loading for automated nodes
-- ✅ Workflow simulation with valid workflows
-- ✅ Error handling for invalid workflows
+- Drag and drop all 5 node types
+- Connect nodes with edges
+- Delete nodes and edges
+- Form validation for all node types
+- Dynamic parameter loading for automated nodes
+- Workflow simulation with valid workflows
+- Error handling for invalid workflows
 
 ### Edge Cases Considered
 - Empty workflow simulation
@@ -186,18 +186,18 @@ Uses DFS-based algorithm to detect cycles in the workflow graph (shown as warnin
 - Duplicate connection prevention
 - Form field validation boundaries
 
-## 📋 What Was Completed
+## What Was Completed
 
-- ✅ All 5 required node types (Start, Task, Approval, Automated, End)
-- ✅ Drag-and-drop from palette to canvas
-- ✅ Node connection with validation
-- ✅ Dynamic configuration forms with validation
-- ✅ Mock API for automation actions
-- ✅ Workflow simulation with execution log
-- ✅ Pre-simulation validation
-- ✅ TypeScript types throughout
-- ✅ Zustand state management
-- ✅ Tailwind CSS styling
+- All 5 required node types (Start, Task, Approval, Automated, End)
+- Drag-and-drop from palette to canvas
+- Node connection with validation
+- Dynamic configuration forms with validation
+- Mock API for automation actions
+- Workflow simulation with execution log
+- Pre-simulation validation
+- TypeScript types throughout
+- Zustand state management
+- Tailwind CSS styling
 
 ## 🚧 Known Issues
 
@@ -205,7 +205,7 @@ Uses DFS-based algorithm to detect cycles in the workflow graph (shown as warnin
 2. **Form Re-renders** - Node forms re-render on each keystroke due to watched values
 3. **Large Workflows** - Performance may degrade with 50+ nodes (not tested)
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 With more time, I would add:
 
@@ -218,7 +218,7 @@ With more time, I would add:
 - **E2E Tests** - Playwright for full workflow testing
 - **Backend Integration** - Real API endpoints with persistence
 
-## 📝 Assumptions Made
+## Assumptions Made
 
 1. **Single User** - No concurrent editing or collaboration features
 2. **Browser Support** - Modern browsers (Chrome, Firefox, Safari, Edge)
@@ -226,17 +226,10 @@ With more time, I would add:
 4. **No Persistence** - Workflows are not saved between sessions
 5. **Sequential Execution** - Simulation assumes linear execution order
 
-## 🤔 Challenges Faced
-
-1. **React Flow v12 Types** - The new version has different type signatures; resolved by using simpler prop interfaces
-2. **State Synchronization** - Keeping Zustand and React Flow states in sync required careful useEffect usage
-3. **Zod Schema Updates** - Zod v4 has different API for some features; adapted schemas accordingly
-4. **Form Value Updates** - Ensuring form changes propagate to nodes required debounced updates
-
-## 📄 License
+## License
 
 MIT License - Feel free to use this project as a reference or starting point.
 
 ---
 
-Built with ❤️ using React, TypeScript, and React Flow
+Built using React, TypeScript, and React Flow
