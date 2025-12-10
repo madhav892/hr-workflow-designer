@@ -10,7 +10,7 @@ import type { NodeType } from './types';
 
 function WorkflowDesigner() {
   const reactFlowWrapper = useRef<HTMLDivElement>(null);
-  const { addNode, setNodes, nodes } = useWorkflowStore();
+  const { addNode, nodes } = useWorkflowStore();
 
   // Handle drag start from palette
   const handleDragStart = useCallback(
