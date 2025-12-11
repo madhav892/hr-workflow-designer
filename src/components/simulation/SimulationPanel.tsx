@@ -168,28 +168,30 @@ export default function SimulationPanel() {
         <button
           onClick={handleSimulate}
           disabled={isWorkflowEmpty || isSimulating}
-          className="btn-primary w-full justify-center text-sm py-2 shadow-lg disabled:shadow-none"
+          className="btn-primary w-full text-sm py-2 shadow-lg disabled:shadow-none"
         >
           {isSimulating ? (
-            <>
+            <span className="flex items-center justify-center gap-2">
               <Loader2 className="w-4 h-4 animate-spin" />
               Running...
-            </>
+            </span>
           ) : (
-            <>
+            <span className="flex items-center justify-center gap-2">
               <Play className="w-4 h-4" />
               Run Simulation
-            </>
+            </span>
           )}
         </button>
 
         {(simulationResult || validationErrors.length > 0) && (
           <button
             onClick={handleClear}
-            className="btn-secondary w-full justify-center text-sm py-2"
+            className="btn-secondary w-full text-sm py-2"
           >
-            <RefreshCw className="w-3.5 h-3.5" />
-            Clear Results
+            <span className="flex items-center justify-center gap-2">
+              <RefreshCw className="w-3.5 h-3.5" />
+              Clear Results
+            </span>
           </button>
         )}
       </div>
