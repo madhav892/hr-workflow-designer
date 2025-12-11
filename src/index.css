@@ -143,6 +143,7 @@
   @apply shadow-md hover:shadow-lg;
   @apply transition-all duration-200;
   @apply focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2;
+  @apply flex items-center gap-2;
 }
 
 .btn-secondary {
@@ -152,6 +153,7 @@
   @apply shadow-sm hover:shadow;
   @apply transition-all duration-200;
   @apply focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+  @apply flex items-center gap-2;
 }
 
 .btn-danger {
@@ -160,6 +162,7 @@
   @apply font-medium px-4 py-2.5 rounded-lg;
   @apply shadow-sm hover:shadow;
   @apply transition-all duration-200;
+  @apply flex items-center gap-2;
 }
 
 /* Panel shadows */
