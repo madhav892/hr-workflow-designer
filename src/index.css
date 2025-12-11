@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* React Flow overrides and custom styles */
+.react-flow__node {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.react-flow__node.selected {
+  outline: none;
+}
+
+.react-flow__node:active {
+  cursor: grabbing;
+}
+
+.react-flow__handle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #6366f1;
+  border: 3px solid white;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: crosshair;
+  z-index: 10;
+}
+
+.react-flow__handle:hover {
+  transform: scale(1.4);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+  background-color: #4f46e5;
+}
+
+.react-flow__handle-connecting {
+  background-color: #10b981;
+  box-shadow: 0 0 0 6px rgba(16, 185, 129, 0.3);
+  transform: scale(1.3);
+}
+
+.react-flow__handle-valid {
+  background-color: #10b981;
+  box-shadow: 0 0 0 6px rgba(16, 185, 129, 0.3);
+  transform: scale(1.3);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Drag and drop styles */
+.dragging {
+  opacity: 0.5;
+}
+
+.drop-indicator {
+  border: 2px dashed #3b82f6;
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+/* Node palette item hover */
+.node-palette-item {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.node-palette-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.node-palette-item:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Form animations */
+.form-field-enter {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+/* Simulation step animations */
+.simulation-step {
+  animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800;
+  @apply text-white font-medium px-4 py-2.5 rounded-lg;
+  @apply shadow-md hover:shadow-lg;
+  @apply transition-all duration-200;
+  @apply focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2;
+}
+
+.btn-secondary {
+  @apply bg-white hover:bg-gray-50 text-gray-700;
+  @apply border border-gray-300 hover:border-gray-400;
+  @apply font-medium px-4 py-2.5 rounded-lg;
+  @apply shadow-sm hover:shadow;
+  @apply transition-all duration-200;
+  @apply focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+}
+
+.btn-danger {
+  @apply bg-red-50 hover:bg-red-100 text-red-700;
+  @apply border border-red-200 hover:border-red-300;
+  @apply font-medium px-4 py-2.5 rounded-lg;
+  @apply shadow-sm hover:shadow;
+  @apply transition-all duration-200;
+}
+
+/* Panel shadows */
+.panel-shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth scrollbars */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
